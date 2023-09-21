@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "alien-baton-398417",
+  "private_key_id": "f4b5637b3920e7afacfba2bf3889b4ab071aff30",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCqdFTpzYKwdBSw\netTUugwVatAsMAitaKORSMO0iaueBsS1bPbyMh/0OcvFOtNHh7Vm7Qzs9fGqwHTh\ng9ltKR0wSbawD6a6XnJjB+dt+ECCVu7aG+M7ekZXmK2nzl68Ou/F10TzM3ZloHue\nXBEVTqDfpw5Yrmk9cJlmjvBuPoMYWqGsWuGFhkLRNx3sjwrpbRylWOXi12VKBASc\nQgLI/8V6gH4nu+liJLcZl4fAaf3QIgy6nM9ycV6F/1qKpavAtvY8y21Kk3y4HauQ\naPGkjLVSktV1pI3EHtr3GebNocnEvgZ3j0Ber5+Sug3IsM4FhKKajjQovK6V19Ta\n2n6WtyxlAgMBAAECggEAIrl2Pvcd46KSQG2VhAyuv4I2DHpwmhsSD1vaeqH9M0E/\nu5IKMMbjWZaYm4JjXlQYMXKjSnbEF7wDU5nPpnxUtOyfafiWR6tL9D6899s2ERdy\nqz45KXm8cMXqwp+5DvGWvSAgrMbUHNn3tQgeds/A2C8pLgnB6MFSjuEZu+vCOyiO\nVTvdzqmsTMvtijiprmYh3nngqSeCgJpEEMrLg0W0hxs5BtGMxIH7td5ovHAVCAsf\ne1rRYRfbHdHnI9zg2My4toyI3Bc5uzSQGAsZb6RXae9xCTEMB4MZXdtM3jGvcnhb\nllkhu+jDy0KRoU/3DdbisPFHXuw7yFNYjZx61CDsIQKBgQDXvF/W9sGG41ZAMR6O\nBTvtGbmHsa0nNoLZc4evnSQR4KQNSiaNhtPSEPW2aasPHaN/5Gpxxg9VNsEalK6i\nJRFuMB+U4ejvinBlR4OTdpzIMWDYLaVkEgyUWCuAtWWK3KY5mfsH4MEBJ4gxM2xE\nH3Y9j66cQvAy9B1VaFfIpcPByQKBgQDKRHXG6zMzHAb6kWK47QQZ4rfoprO2M+7p\nQUE7QmJZchkHsS7l0RnIXtui/y3PYfoth6H3luwNEvBOTtHYKbNFEUS3b4xa2yTN\noGe1JCSsrbWfntFU0+SVyyd8om9pEY1bzHE5t+Moea8N/49td2uD+XG8cMinVs+X\nm62E5m3DvQKBgCZUdcK/vMq2gZCOKZuaGneZ5njRfK5G5SC1ghoVlV8Hxp4F2quy\nlNfx43YxeA8LeQ00DCWCxx6gx9ZtLEnqxBoLutC9AqHsuuODvUDqBhkbjNVb5tLM\n0idZMwF/OTde1LnPPea8bA5Ec9IqDMZdwKhXavKgggTLkpqmG1KvAQThAoGBAJ2R\ng2a45yPTm6QrCgshqOY5didpZep0vpM7YIO3jUI83j7dyrkBkeJD8zohLCC4JNq/\nJG/qRG1S6Z03TcXlhmAxuaRk46QLv7noUaINS/yxPiHg6RX6E8KVhmdTaxMgt0xi\nEXpzRCTN1o9DHQqb00f2VKIGAmpJ+GIUxrIXiD7JAoGAWmZ4vyVrpe8LOc4bLGxK\nQW77dFrkczlu8XT9SzAi2nMJ6p6ToXB79eP+lrESwbDwpUxUQOk0qAlYoZmeWxBP\nY05sxjPr3MhnyOItw/KG/s4REF34InGTipJhyk26Vt2kNXbWZ5ulhvenmKrxuVFR\nJYcyPX6nQXjoMntXbOaKZ/g=\n-----END PRIVATE KEY-----\n",
+  "client_email": "tarashabackend@alien-baton-398417.iam.gserviceaccount.com",
+  "client_id": "100941281812370204567",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tarashabackend%40alien-baton-398417.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
