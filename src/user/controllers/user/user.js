@@ -9,6 +9,8 @@ const { saveUserInquiry } = require('../Inquiry/Inquiry');
 const Razorpay = require('razorpay');
 const UserTransactions = require('../../models/user.transactions.model');
 const axios = require('axios');
+
+// const axios = require('axios');
 const {
   SendCallConfirmationUserMail,
   SendCallConfirmationUserMailtoMe,
@@ -126,12 +128,14 @@ const googleSignIn = async (req, res) => {
     const { token } = req.body;
     console.log(token);
 
-    const profileResponse = await fetch(
+    const profileResponse = await axios.get(
       'https://www.googleapis.com/oauth2/v1/userinfo',
       { headers: { Authorization: `Bearer ${token}` } }
     );
 
-    const profileData = await profileResponse.json();
+    console.log(profileResponse.data);
+
+    const profileData = await profileResponse.data;
 
     const user = await User.findOne({ email: profileData.email });
     if (user) {
