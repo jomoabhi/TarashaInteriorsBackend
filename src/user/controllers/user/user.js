@@ -7,7 +7,7 @@ const sendMail = require('../../services/emailServices/email');
 const { savePaymentDetails } = require('../payment/payment');
 const { saveUserInquiry } = require('../Inquiry/Inquiry');
 const Razorpay = require('razorpay');
-
+const UserTransactions = require('../../models/user.transactions.model');
 const axios = require('axios');
 const {
   SendCallConfirmationUserMail,
@@ -144,9 +144,11 @@ const googleSignIn = async (req, res) => {
         //   ...req.body,
         // });
         // await userAccessHistory.save();
-        user.tokens = user.tokens.concat({
-          token,
-        });
+        const token_jwt = await user.generateAuthToken();
+
+        // user.tokens = user.tokens.concat({
+        //   token_jwt,
+        // });
         user.isEmailVerified = true;
 
         // user.tokens = [{ token, accessHistoryId: userAccessHistory._id }];
@@ -154,16 +156,16 @@ const googleSignIn = async (req, res) => {
 
         res
           .status(201)
-          .cookie('token', token)
-          .json({ success: true, userData: { user, userAccessHistory } });
+          .cookie('token', token_jwt)
+          .json({ success: true, userData: { user, token: token_jwt } });
       } catch (err) {
         res.json({ success: false, error: err.message });
       }
     } else {
-      console.log('Email:', profileData.email);
-      console.log('Name:', profileData.name);
-      console.log('Profile Image:', profileData.picture);
-
+      // console.log('Email:', profileData.email);
+      // console.log('Name:', profileData.name);
+      // console.log('Profile Image:', profileData.picture);
+      console.log(profileData);
       const newUser = new User({
         email: profileData.email,
         name: profileData.name,
@@ -177,15 +179,19 @@ const googleSignIn = async (req, res) => {
 
       try {
         // await userAccessHistory.save();
-        newUser.tokens = newUser.tokens.concat({
-          token,
-        });
         await newUser.save();
-        // const token = await user.generateAuthToken(userAccessHistory._id);
+
+        const token_jwt = await newUser.generateAuthToken();
+        // newUser.tokens = newUser.tokens.concat({
+        //   token_jwt,
+        // });
         res
           .status(201)
           .cookie('token', token)
-          .json({ success: true, userData: { newUser } });
+          .json({
+            success: true,
+            userData: { user: newUser, token: token_jwt },
+          });
       } catch (e) {
         console.log(e.message);
         res.status(400).send(e.message);
@@ -224,7 +230,7 @@ const forgetPassword = async (req, res) => {
       }),
     })
       .then(() => {
-        return res.json({ success: true, token: resetToken });
+        return res.json({ success: true });
       })
       .catch((err) => {
         console.log(err);
@@ -282,7 +288,7 @@ const paymentSuccess = async (req, res) => {
         if (success) {
           await updateEventSummary(
             req.body.eventId,
-            `Call With ${req.user.name} \n Phone No. ${req.user.mobiles[0].countrycode}${req.user.mobiles[0].mobile}`
+            `Call With ${req.user.name} \n Phone No. ${req.body.payment_details.number}`
           );
           res.status(200).json({ success: true, transaction_details });
         }
@@ -353,6 +359,47 @@ const fetchPaymentDetailsFromRazorPay = async (req, res) => {
   }
 };
 
+async function paginatedTransactions(req, res) {
+  try {
+    const { page = 1, limit = 10, search = '' } = req.body;
+    console.log(search);
+    // Construct the search query
+    const searchQuery = {
+      $and: [
+        {
+          $or: [
+            { razorpay_payment_id: new RegExp(search, 'i') },
+            { booking_type: new RegExp(search, 'i') },
+            { booking_method: new RegExp(search, 'i') },
+            { booking_remarks: new RegExp(search, 'i') },
+            { payment_date: new RegExp(search, 'i') },
+            { booking_date: new RegExp(search, 'i') },
+          ],
+        },
+        { owner: req.user._id }, // Apply ownerId filter if provided
+      ],
+    };
+    // Count the total number of matching documents
+    const totalItems = await UserTransactions.countDocuments(searchQuery);
+
+    // Paginate the results
+    const transactions = await UserTransactions.find(searchQuery)
+      .skip((page - 1) * limit)
+      .limit(Number(limit))
+      .sort({ createdAt: -1 });
+
+    res.status(200).json({
+      transactions: transactions,
+      currentPage: Number(page),
+      totalPages: Math.ceil(totalItems / limit),
+      totalItems,
+    });
+  } catch (error) {
+    console.error('Error fetching paginated transactions:', error);
+    res.status(500).json({ error: 'Error fetching paginated transactions' });
+  }
+}
+
 module.exports = {
   signup,
   loginEmail,
@@ -367,4 +414,5 @@ module.exports = {
   paymentSuccess,
   inquirySuccess,
   fetchPaymentDetailsFromRazorPay,
+  paginatedTransactions,
 };

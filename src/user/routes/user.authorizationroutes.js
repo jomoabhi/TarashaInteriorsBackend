@@ -15,6 +15,7 @@ const {
   paymentSuccess,
   inquirySuccess,
   fetchPaymentDetailsFromRazorPay,
+  paginatedTransactions,
 } = require('../controllers/user/user');
 const UserRequestValidator = require('../middleware/requestValidator.middleware');
 const userRequestValidatorobj = new UserRequestValidator();
@@ -27,7 +28,7 @@ router.post(
   signup
 );
 
-router.get('/users/me', auth, profile);
+router.post('/users/me', auth, profile);
 
 router.post(
   '/users/login',
@@ -62,4 +63,6 @@ router.post(
   paymentSuccess
 );
 router.post('/save-user-inquiry', auth, inquirySuccess);
+
+router.post('/transactions', auth, paginatedTransactions);
 module.exports = router;

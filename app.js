@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ['http://localhost:5173', ''],
+    origin: ['http://localhost:5173', 'https://tarasha-demo.onrender.com'],
     methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization', 'x-csrf-token'],
   })
@@ -32,4 +32,5 @@ app.use(
   formattedResponse,
   require('./src/calendar/routes/calendar')
 );
+app.use('/blogs', require('./src/blog/routes/blogs.routes'));
 module.exports = app;

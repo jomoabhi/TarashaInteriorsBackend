@@ -145,10 +145,13 @@ userSchema.methods.toJSON = function () {
 
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
-  const token = jwt.sign({ _id: user.id.toString() }, process.env.JWT_SECRET);
+  const expirationTime = Math.floor(Date.now() / 1000) + 7 * 24 * 60 * 60; // 7 days in seconds
+  const token = jwt.sign({ _id: user.id.toString() }, process.env.JWT_SECRET, {
+    expiresIn: expirationTime,
+  });
   console.log(token);
-  user.tokens = user.tokens.concat({ token });
-  await user.save();
+  // user.tokens = user.tokens.concat({ token });
+  // await user.save();
   return token;
 };
 

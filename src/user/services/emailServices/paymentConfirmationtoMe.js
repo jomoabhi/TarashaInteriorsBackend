@@ -81,7 +81,7 @@ module.exports = (user, Payment_details, service_name) => {
               <ul>
                     <li><strong>Client Name:</strong> ${user.name}</li>
                     <li><strong>Client Email:</strong> ${user.email}</li>
-                    <li><strong>Client Phone:</strong> ${user.mobiles[0].countrycode}${user.mobiles[0].mobile}</li>
+                    <li><strong>Client Phone:</strong> ${Payment_details.number}</li>
                   <li><strong>Payment Amount:</strong> ${Payment_details.amount}</li>
                   <li><strong>Payment Date:</strong> ${Payment_details.payment_date}</li>
                   <li><strong>Booking Date:</strong> ${Payment_details.booking_date}</li>
