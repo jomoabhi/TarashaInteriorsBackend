@@ -23,14 +23,14 @@ app.use(
   })
 );
 app.use(
-  '/user',
+  '/api/user',
   formattedResponse,
   require('./src/user/routes/user.authorizationroutes')
 );
 app.use(
-  '/calendar',
+  '/api/calendar',
   formattedResponse,
   require('./src/calendar/routes/calendar')
 );
-app.use('/blogs', require('./src/blog/routes/blogs.routes'));
+app.use('/api/blogs', require('./src/blog/routes/blogs.routes'));
 module.exports = app;
