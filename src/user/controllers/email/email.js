@@ -29,7 +29,7 @@ const SendCallConfirmationUserMail = async (user, paymentdetails) => {
 const SendCallConfirmationUserMailtoMe = async (user, paymentdetails) => {
   try {
     const info = sendMail({
-      toEmail: 'as9443380@gmail.com',
+      toEmail: 'tarashainterior@gmail.com',
       subject: 'Client Payment Confirmation',
       // text: `${emailFrom} shared a file with you.`,
       html: require('../../services/emailServices/paymentConfirmationtoMe')(
@@ -82,7 +82,7 @@ const SendInquiryConfirmationUserMailtoMe = async (
 ) => {
   try {
     const info = sendMail({
-      toEmail: 'as9443380@gmail.com',
+      toEmail: 'tarashainterior@gmail.com',
       subject: 'Client Inquiry Confirmation',
       // text: `${emailFrom} shared a file with you.`,
       html: require('../../services/emailServices/InquiryConfirmationtoMe')(

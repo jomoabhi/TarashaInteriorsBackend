@@ -73,7 +73,7 @@ const profile = async (req, res) => {
 
 const updateProfile = async (req, res) => {
   const updates = Object.keys(req.body);
-  const allowedUpdates = ['name', 'email'];
+  const allowedUpdates = ['name', 'mobiles'];
   const isValidOperation = updates.every((update) =>
     allowedUpdates.includes(update)
   );
