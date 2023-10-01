@@ -83,7 +83,17 @@ const updateProfile = async (req, res) => {
   }
 
   try {
-    updates.forEach((update) => (req.user[update] = req.body[update]));
+    // updates.forEach((update) => (req.user[update] = req.body[update]));
+    if (req.body.name) req.user['name'] = req.body['name'];
+
+    if (req.body.mobiles && req.body.mobiles.length > 0) {
+      req.user.mobiles = [];
+
+      req.user.mobiles = req.user.mobiles.concat({
+        ...req.body.mobiles[0],
+      });
+    }
+
     await req.user.save();
     res.send(req.user);
   } catch (e) {
