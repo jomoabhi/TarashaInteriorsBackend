@@ -66,7 +66,7 @@ module.exports = (user, Payment_details, service_name) => {
       </head>
       <body>
           <div class="header">
-          <img src="https://res.cloudinary.com/dfoggertn/image/upload/v1694338962/TarashaWebsiteContent/Images/company-Logo/Copy_of_T2_1_1_phmiwf.png" alt="Company Logo">
+          <img src="https://res.cloudinary.com/dfoggertn/image/upload/v1698483266/icon_c2hwoa.png" alt="Company Logo">
 
               <h1>Client Payment Confirmation - Interior Design Services</h1>
           </div>
@@ -82,7 +82,7 @@ module.exports = (user, Payment_details, service_name) => {
                     <li><strong>Client Name:</strong> ${user.name}</li>
                     <li><strong>Client Email:</strong> ${user.email}</li>
                     <li><strong>Client Phone:</strong> ${Payment_details.number}</li>
-                  <li><strong>Payment Amount:</strong> ${Payment_details.amount}</li>
+                  <li><strong>Payment Amount:</strong> ₹${Payment_details.amount}</li>
                   <li><strong>Payment Date:</strong> ${Payment_details.payment_date}</li>
                   <li><strong>Booking Date:</strong> ${Payment_details.booking_date}</li>
                   <li><strong>Booked Time Slot:</strong> ${Payment_details.slot}</li>

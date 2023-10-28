@@ -177,7 +177,7 @@ module.exports = ({ user, link }) => {
     <tr>
       <td style="padding-right: 0px;padding-left: 0px;" align="center">
         
-        <img align="center" border="0" src="https://res.cloudinary.com/dfoggertn/image/upload/v1694338962/TarashaWebsiteContent/Images/company-Logo/Copy_of_T2_1_1_phmiwf.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 90%;max-width: 168.2px;" width="168.2"/>
+        <img align="center" border="0" src="https://res.cloudinary.com/dfoggertn/image/upload/v1698483266/icon_c2hwoa.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 90%;max-width: 168.2px;" width="168.2"/>
         
       </td>
     </tr>

@@ -71,7 +71,7 @@ module.exports = (username) => {
       
       <div class="header">
 
-              <img src="https://res.cloudinary.com/dfoggertn/image/upload/v1694338962/TarashaWebsiteContent/Images/company-Logo/Copy_of_T2_1_1_phmiwf.png" alt="Company Logo">
+              <img src="https://res.cloudinary.com/dfoggertn/image/upload/v1698483266/icon_c2hwoa.png" alt="Company Logo">
               <h1>We Have Received Your Inquiry </h1>
               </div>
 
@@ -79,7 +79,7 @@ module.exports = (username) => {
 
           <p>Dear ${username}</p>
   
-          <p>Thank you for your interest in Tarasha Ineriors. We appreciate your inquiry about our interior design services. We are excited to learn more about your project and how we can assist you in creating a beautiful and functional space.</p>
+          <p>Thank you for your interest in Tarasha Interiors. We appreciate your inquiry about our interior design services. We are excited to learn more about your project and how we can assist you in creating a beautiful and functional space.</p>
   
           <p>Your inquiry is important to us, and we will do our best to provide you with the information you need. Our team of experienced interior designers is ready to collaborate with you to transform your vision into reality.</p>
   

@@ -80,7 +80,7 @@ module.exports = (user, inquiryData, package_name, package_option) => {
   <body>
       <div class="container">
           <div class="header">
-          <img src="https://res.cloudinary.com/dfoggertn/image/upload/v1694338962/TarashaWebsiteContent/Images/company-Logo/Copy_of_T2_1_1_phmiwf.png" alt="Company Logo">
+          <img src="https://res.cloudinary.com/dfoggertn/image/upload/v1698483266/icon_c2hwoa.png" alt="Company Logo">
 
               <h1>New Inquiry Received</h1>
           </div>

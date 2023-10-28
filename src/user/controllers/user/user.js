@@ -244,7 +244,7 @@ const forgetPassword = async (req, res) => {
       }),
     })
       .then(() => {
-        return res.json({ success: true });
+        return res.json({ success: true, link });
       })
       .catch((err) => {
         console.log(err);

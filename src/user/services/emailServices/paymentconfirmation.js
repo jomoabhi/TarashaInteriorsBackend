@@ -66,7 +66,7 @@ module.exports = (user, Payment_details, service_name) => {
     </head>
     <body>
         <div class="header">
-        <img src="https://res.cloudinary.com/dfoggertn/image/upload/v1694338962/TarashaWebsiteContent/Images/company-Logo/Copy_of_T2_1_1_phmiwf.png" alt="Company Logo">
+        <img src="https://res.cloudinary.com/dfoggertn/image/upload/v1698483266/icon_c2hwoa.png" alt="Company Logo">
 
             <h1>Payment Confirmation - Interior Design Services</h1>
         </div>
@@ -74,12 +74,12 @@ module.exports = (user, Payment_details, service_name) => {
         <div class="content">
             <p>Dear ${user},</p>
     
-            <p>I hope this message finds you well. We want to express our appreciation for your prompt payment of <strong>${Payment_details.amount} </strong>for the <strong>${service_name}</strong> provided by <strong>Tarasha Interiors</strong>. We are thrilled to have the opportunity to work on your project and are excited about the journey ahead.</p>
+            <p>I hope this message finds you well. We want to express our appreciation for your prompt payment of <strong>₹${Payment_details.amount} </strong>for the <strong>${service_name}</strong> provided by <strong>Tarasha Interiors</strong>. We are thrilled to have the opportunity to work on your project and are excited about the journey ahead.</p>
     
             <p>Here are the details of your payment:</p>
     
             <ul>
-                <li><strong>Payment Amount:</strong> ${Payment_details.amount}</li>
+                <li><strong>Payment Amount:</strong> ₹${Payment_details.amount}</li>
                 <li><strong>Payment Date:</strong> ${Payment_details.payment_date}</li>
                 <li><strong>Booking Date:</strong> ${Payment_details.booking_date}</li>
                 <li><strong>Booked Time Slot:</strong> ${Payment_details.slot}</li>
